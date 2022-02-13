@@ -1,0 +1,30 @@
+{% extends "base2.html" %}
+{% block title %}Change Password{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/changepassword.css') }}">{% endblock %}
+{% block content %}
+<div class="container">
+    <center><b><h1>Change Password</h1></b></center>
+   <div class="form-inner">
+     <form action="#" class="Changepass">
+      <div class="field">
+       <input type="text" placeholder="Username" required>
+      </div>
+      <div class="field">
+       <input type="password" placeholder="New Password" required>
+      </div>
+      <div class="field">
+       <input type="password" placeholder="Confirm Password" required>
+      </div>
+       <div class="field btn">
+         <div class="btn-layer"></div>
+           <input type="submit" value="Change">
+         </div>
+       </div><br>
+       <center><div class="field">
+         <a href="login.html">Login</a>
+       </div></center>
+     </form>
+   </div>
+ </div>
+</div>
+{% endblock %}

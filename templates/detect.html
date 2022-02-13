@@ -1,0 +1,74 @@
+{% extends "base2.html" %}
+{% block title %}Detect{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/detect.css') }}">{% endblock %}
+{% block content %}
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form action="#" method="post">
+        <h1>News Link</h1><br><br>
+         <textarea id="subject" type="text" name="news" placeholder="Type Your Message Here" style="height:130px"></textarea>
+        <p>{{ r1 }}</p>
+        <p>{{ r2 }}</p>
+        <p>{{ r3 }}</p>
+           <div class="field btn">
+         <button type="submit" value="submit" class="button">Verify</button>   
+          </div>
+      </form>
+      
+      
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="#" method="post">
+        <h1>Message</h1>
+        <div class="field">
+          <select id="apps" name="apps">
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Twitter">Twitter</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+        </div><br><br>
+        <textarea id="subject" name="message" placeholder="Type Your Message Here" style="height:130px"></textarea>
+        <div class="field">
+         <input type="datetime-local" name="date" placeholder="date" required>
+        </div><br>
+        <p>{{ r4 }}</p>
+        <p>{{ r5 }}</p>
+        <p>{{ r6 }}</p>
+        <div class="field btn">
+         <button type="submit" class="button">Verify</button>
+        </div>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h2>Verify</h2><br>
+          <button type="submit" class="button1" id="signIn">Message</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h2>Verify</h2><br>
+          <button type="submit" class="button1" id="signUp">News Link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  const signUpButton = document.getElementById('signUp');
+  const signInButton = document.getElementById('signIn');
+  const container = document.getElementById('container');
+  
+  signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+  });
+  
+  signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+  });
+  
+</script>
+{% endblock %}

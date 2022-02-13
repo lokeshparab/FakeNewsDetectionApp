@@ -1,0 +1,120 @@
+{% extends "base1.html" %}
+{% block title %}Login and Registration Form{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/login.css') }}">{% endblock %}
+{% block content %}
+<div class="wrapper">
+    <div class="title-text">
+       <div class="title login">
+          Login Form
+       </div>
+       <div class="title register">
+          Register Form
+       </div>
+    </div>
+    <div class="form-container">
+       <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="register">
+          <label for="login" class="slide login"><b>Login</b></label>
+          <label for="register" class="slide register"><b>Register</b></label>
+          <div class="slider-tab"></div>
+       </div>
+       <div class="form-inner">
+           <form action="#" class="login">
+           <div class="center">
+               <b><label>Sign in using your account</label></b>
+           </div>
+             <div class="field">
+                <input type="text" placeholder="Username" required>
+             </div>
+             <div class="field">
+                <input type="password" placeholder="Password" required>
+             </div>
+             <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
+             <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+             </div>
+             
+             <div class="register-link">
+                Don't have an account? <a href="">Register</a>
+             </div>
+             <center><div class="pass-link">
+                <a href="Changepass.html">Forgot password?</a>
+             </div></center>
+          </form>
+          <form action="#" class="register">
+             <div class="field">
+                <input type="text" placeholder="Full Name" required>
+             </div>
+            <div class="field">            
+             <div class="radio-wrapper">
+              <div class="radio-container">
+               <input checked="checked" type="radio" name="gender" value="1" id="male" />
+                <label for="male">Male</label>
+               <input type="radio" name="gender" value="0" id="female" />
+                <label for="female">Female</label>
+               <input type="radio" name="gender" value="1" id="others" />
+                <label for="others">Others</label>
+             </div> 
+            </div>
+           </div>
+             <div class="field">
+                <input type="number" placeholder="Age" required>
+             </div>
+             <div class="field">
+                <input type="text" placeholder="Email Address" required>
+             </div>
+             <div class="field">
+                <input type="text" placeholder="Username" required>
+             </div>
+             <div class="field">
+                <input type="password" placeholder="Password" required>
+             </div>
+             <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Register">
+             </div>
+             <div class="register-link">
+                Already have an account? <a href="">Login</a>
+             </div>
+          </form>
+       </div>
+    </div>
+ </div>
+
+ <script>
+    const loginText = document.querySelector(".title-text .login");
+    const loginForm = document.querySelector("form.login");
+    const loginBtn = document.querySelector("label.login");
+    const signupBtn = document.querySelector("label.register");
+    const signupLink = document.querySelector("form .register-link a");
+    signupBtn.onclick = (()=>{
+      loginForm.style.marginLeft = "-50%";
+      loginText.style.marginLeft = "-50%";
+    });
+    loginBtn.onclick = (()=>{
+      loginForm.style.marginLeft = "0%";
+      loginText.style.marginLeft = "0%";
+    });
+    signupLink.onclick = (()=>{
+      signupBtn.click();
+      return false;
+    });
+   
+   function openForm() {
+document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+document.getElementById("myForm").style.display = "none";
+} 
+   function openForm1() {
+document.getElementById("myForm1").style.display = "block";
+}
+
+function closeForm1() {
+document.getElementById("myForm1").style.display = "none";
+}
+ </script>
+{% endblock %}

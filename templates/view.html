@@ -1,0 +1,26 @@
+{% extends "base2.html" %}
+{% block title %}View{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/view.css') }}">{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+<center><b><h1>Fakeous</h1></b></center><br>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+  <tr>
+     <th>App</th>
+     <th>Messages</th>
+     <th>Detect</th>
+     <th>Date</th>
+     <th colspan="2">Operation</th>
+  </tr>
+      </thead>
+    </table>
+  </div><br>
+<form method="post" action="Pdf.php" target="_blank">
+   <center><b><button class="button" name="generate_pdf"><i class="fa fa-check" style='font-size:16px'></i>Generate PDF</button></b></center>
+   <center>
+</form>
+</div>
+{% endblock %}

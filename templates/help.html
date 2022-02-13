@@ -1,0 +1,19 @@
+{% extends "base2.html" %}
+{% block title %}Help{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/help.css') }}">{% endblock %}
+{% block content %}
+<div class="container">
+    <center><h1>Steps</h1><br></center>
+    <p><b>1. After successfull login a page appears where you can perform the tasks of Verification.</p><br>
+    <p>2. Move your cursor to Detect .</p><br>
+    <p>3. After selecting the Message the form appears where you will have to select the source where you get the message and type or copy the message and then click on verify.</p><br>
+    <p>4. Then the system will start processing and will display the final results in view section.</p><br>
+    <p>5. In the view section user can view the selected message is  fake or not.</p><br>
+    <p>6. Also user can download the pdf from view section.</p><br>
+    <p>7. Also user will be able to verify the news in the link section by directly copying the link.</p><br>
+    <p>8. So after the completion of fake news and meassage detection the user can log out from the site.</b></p><br>
+    <center><h1>View Tutorial</h1><br></center>
+    <iframe width="100%" height="345" src="https://www.youtube.com/">
+    </iframe>
+</div>
+{% endblock %}

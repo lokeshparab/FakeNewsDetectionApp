@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{% block title %}{% endblock %}</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      {% block style %} {% endblock%}
+    </head>
+
+    <body>
+        <nav>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrIg_Ljv_3NeK0LElowk8huhdgxDvyv3iGsQ&usqp=CAU" height="38px" width="45px">
+            <ul>
+                <li><a class="active" href="{{ url_for('home') }}"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="{{ url_for('aboutus') }}"><i class="fa fa-info-circle"></i> About us</a></li>
+                <li><a href="{{ url_for('login') }}"><i class="fa fa-sign-in"></i> Login</a></li> 
+            </ul>
+        </nav>
+
+        <!-- Some code here -->
+        {% block content %}
+        {% endblock %}
+
+    </body>
+</html>
+

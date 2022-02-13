@@ -1,0 +1,86 @@
+{% extends "base2.html" %}
+{% block title %}Profile{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/profile.css') }}">{% endblock %}
+{% block content %}
+<div class="center">
+    <div class="bio_card">
+     <div class="left">
+      <div class="btn">
+        <i class="fa fa-plus"></i>
+      </div> 
+      <div id="container">                  
+      <image id="profileImage" src="https://www.pg-mc.com/wp-content/uploads/2014/07/slider1.jpg"/>
+      </div>
+      <div class="centered"><b><h2>Profile</h2></b></div>
+       <div class="box">
+       <div id="profile-container"> 
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <image id ="profileImage1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVR7gFTPgh9zmEdc0p8UtAcwS3_oPLZUcOkA&usqp=CAU">
+        <input id="imageUpload" type="file" 
+          name="profile_photo" placeholder="Photo" required="" capture>
+       </div>
+       </div>                 
+       <h1>Username</h1>
+     </div>
+     <div class="right">
+      <div class="form-inner">
+       <form action="#" class="profile"><br>
+        <div class="field">
+         <input type="text" placeholder="Full Name" required>
+        </div>
+        <div class="field">
+         <div class="radio-wrapper">
+          <div class="radio-container">
+           <input checked="checked" type="radio" name="gender" value="1" id="male" />
+           <label for="male">Male</label>
+           <input type="radio" name="gender" value="0" id="female" />
+           <label for="female">Female</label>
+           <input type="radio" name="gender" value="1" id="others" />
+           <label for="others">Others</label>
+         </div> 
+        </div>
+       </div>
+       <div class="field">
+        <input type="number" placeholder="Age" required>
+       </div>
+       <div class="field">
+        <input type="text" placeholder="Email Address" required>
+       </div>
+       <div class="field">
+        <input type="text" placeholder="Username" required>
+       </div><br>
+       <button type="submit" class="button">Edit Profile</button>
+      </form>                
+     </div>            
+    </div>
+   </div>
+       <script>       
+           $(document).ready(function(){
+               
+               $(".btn").on("click",function(){               
+                   if($(".right").css("width") == "0px"){
+                       $(".right").animate({  width: "500px" },400);
+                   $(".btn i").removeClass();
+                   $(".btn i").addClass("fa fa-minus");
+                   }else{
+                       $(".right").animate({  width: "0px" },400);
+                   $(".btn i").removeClass();
+                   $(".btn i").addClass("fa fa-plus");
+                   }
+               });
+           });  
+           $("#profileImage1").click(function(e) {
+       $("#imageUpload").click();
+   });   
+   function fasterPreview( uploader ) {
+       if ( uploader.files && uploader.files[0] ){
+             $('#profileImage1').attr('src', 
+                window.URL.createObjectURL(uploader.files[0]) );
+       }
+   }
+   
+   $("#imageUpload").change(function(){
+       fasterPreview( this );
+   }); 
+       </script>
+{% endblock %}

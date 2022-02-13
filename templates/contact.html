@@ -1,0 +1,51 @@
+{% extends "base2.html" %}
+{% block title %}Contact Form{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/contact.css') }}">{% endblock %}
+{% block content %}
+<div class="container">
+    <center>
+        <b><h1>Contact Form</h1></b>
+    </center>
+  <div>
+    <div class="row">
+      <div class="column">
+        <img src="" style="width:100%">
+        <h3>Contact Information</h3><br>
+        <p><i class="fa fa-phone"></i><b>  +01 2345678910</b></p><br><br>
+        <p><i class="fa fa-map-marker"></i><b>  B-204, J.P.Road.</b></p><br><br>
+        <p><i class="fa fa-send-o"></i><b>  Grp4@gmail.com</b></p><br><br>
+        <p><i class="fa fa-globe"></i><b>  www.fakeus.com</b></p><br><br>
+      </div>
+      <div class="column">
+        <form action="/action_page.php">
+         <div class="field">
+          <input type="text" placeholder="Name" required>
+         </div>
+         <div class="field">
+          <input type="text" placeholder="Email" required>
+         </div>
+         <div class="field">
+          <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="south africa">South Africa</option>
+            <option value="england">England</option>
+            <option value="west indies">West Indies</option>
+            <option value="pakistan">Pakistan</option>
+            <option value="bangladesh">Bangladesh</option>
+            <option value="shrilanka">Shrilanka</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+         </div><br>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <div class="field btn">
+            <div class="btn-layer"></div>
+              <input type="submit" value="Send Message">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
