@@ -1,0 +1,301 @@
+body {
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px;
+    background-image: url("https://www.pg-mc.com/wp-content/uploads/2014/07/slider1.jpg");
+    background-color: transparent;
+    height: 1130px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
+    user-select: none;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  nav{
+    height: 50px;
+    background: #063247;
+    box-shadow: 0 3px 15px rgba(0,0,0,.4);
+    border-radius:22px;
+  }
+  nav ul{
+    float: right;
+    margin-right: 30px;
+  }
+  nav ul li{
+    display: inline-block;
+  }
+  nav ul li a{
+    color: white;
+    display: block;
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 22px;
+    background: #063247;
+    transition: .5s;
+  }
+  nav ul li a:hover,
+  nav ul li a.active{
+    color: #23dbdb;
+  }
+  nav ul ul{
+    position: absolute;
+    top: 85px;
+    border-top: 3px solid #23dbdb;
+    opacity: 0;
+    visibility: hidden;
+  }
+  nav ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+    transition: .3s linear;
+  }
+  nav ul ul li{
+    width: 145px;
+    display: list-item;
+    position: relative;
+    border: 1px solid #042331;
+    border-top: none;
+  }
+  nav ul ul li a{
+    line-height: 50px;
+  }
+  nav ul ul ul{
+    border-top: none;
+  }
+  nav ul ul ul li{
+    position: relative;
+    top: -70px;
+    left: 150px;
+  }
+  nav ul ul li a i{
+    margin-left: 45px;
+  }
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 24%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    text-align:center;
+    margin-left:155px;
+  }
+  .column1 {
+    float: left;
+    width: 24%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    text-align:center;
+  }
+  .column2 {
+    float: left;
+    width: 24%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    text-align:center;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    border-radius:25px;
+  }
+  
+  div.card:hover {
+    border: 2px solid #777;
+     cursor: pointer;
+     border-color:white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border-radius:30px;
+    font-size:18px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  }
+  
+  .button:hover {
+    background-color: #555;
+     cursor: pointer;
+  }
+  
+  .button:active {
+    background-color: black;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  .bg-image {
+    filter: blur(2px);
+    -webkit-filter: blur(2px); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     border-radius:10px;
+  }
+  .bg-text {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-weight: bold;
+    border-radius:25px;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    height:78%;
+    padding: 1px;
+    text-align: center;  
+    box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  }
+  img{
+    border-radius: 15px;
+     margin-left:6px;
+     margin-top:6px;
+     box-shadow: 0 3px 15px rgba(0,0,0,.4);
+     cursor: pointer;
+  }
+  #imageUpload
+  {
+      display: none;
+  }
+  
+  #profileImage
+  {
+      cursor: pointer;
+      size:100%;
+  }
+  
+  #profile-container {
+      width: 180px;
+      height: 180px;
+  }
+  
+  #profile-container img {
+      width: 249px;
+      height: 180px;
+      position: absolute;
+      object-fit: cover;
+      border-radius: 11%;
+      overflow: none;
+      left:170px;
+      top:78px;
+      box-shadow: 0 3px 15px rgba(0,0,0,.6);
+  }
+  #profileImage1
+  {
+      cursor: pointer;
+      size:100%;
+  }
+  #profile-container1 {
+      width: 249px;
+      height: 180px;
+  }
+  #profile-container1 img {
+      width: 249px;
+      height: 180px;
+      position: absolute;
+      object-fit: cover;
+      border-radius: 11%;
+      overflow: none;
+      left:464px;
+      top:78px;
+  }
+  #profileImage2
+  {
+      cursor: pointer;
+      size:100%;
+  }
+  #profile-container2 {
+      width: 249px;
+      height: 180px;
+  }
+  #profile-container2 img {
+      width: 249px;
+      height: 180px;
+      position: absolute;
+      object-fit: cover;
+      border-radius: 11%;
+      overflow: none;
+      left:757px;
+      top:78px;
+  }
+  
+  .center{
+      position:absolute;
+      width:800px;
+      height:500px;
+      left:50%;
+      top:50%;
+      bottom:50%;
+      margin-left:-400px;
+      margin-top:88px;
+  }
+  p{
+    font-size:16px;
+    color:white;
+    text-shadow: 0 3px 15px rgba(0,0,0,.4);
+  }
+  h1{
+    font-size:35px;
+    color:firebrick;
+  box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  text-shadow: 0 3px 15px rgba(0,0,0,.6);
+  border-radius:50px;
+  width:74%;
+  margin-left:145px;
+  }
+  h2{
+      font-size:35px;
+      color:firebrick;
+  box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  text-shadow: 0 3px 15px rgba(0,0,0,.6);
+  border-radius:50px;
+  width:105%;
+  margin-left:-23px;
+  }
+  

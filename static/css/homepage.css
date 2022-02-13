@@ -1,0 +1,192 @@
+body {
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px;
+    background-image: url("https://www.pg-mc.com/wp-content/uploads/2014/07/slider1.jpg");
+    background-color: transparent;
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
+    overflow:hidden;
+    user-select: none;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  nav{
+    height: 50px;
+    background: #063247;
+    box-shadow: 0 3px 15px rgba(0,0,0,.4);
+    border-radius:22px;
+  }
+  nav ul{
+    float: right;
+    margin-right: 30px;
+  }
+  
+  nav ul li{
+    display: inline-block;
+  }
+  nav ul li a{
+    color: white;
+    display: block;
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 22px;
+    background: #063247;
+    transition: .5s;
+  }
+  nav ul li a:hover,
+  nav ul li a.active{
+    color: #23dbdb;
+  }
+  nav ul ul{
+    position: absolute;
+    top: 85px;
+    border-top: 3px solid #23dbdb;
+    opacity: 0;
+    visibility: hidden;
+  }
+  nav ul li:hover > ul{
+    top: 55px;
+    opacity: 1;
+    visibility: visible;
+    transition: .3s linear;
+  }
+  nav ul ul li{
+    width: 145px;
+    display: list-item;
+    position: relative;
+    border: 1px solid #042331;
+    border-top: none;
+  }
+  nav ul ul li a{
+    line-height: 50px;
+  }
+  nav ul ul ul{
+    border-top: none;
+  }
+  nav ul ul ul li{
+    position: relative;
+    top: -70px;
+    left: 150px;
+  }
+  nav ul ul li a i{
+    margin-left: 45px;
+  }
+  
+  input[type=text], input[type=password] {
+    width: 300px;
+    padding: 10px 18px;
+    margin: 8px 0;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 300px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+      box-shadow: 15px 15px 10px grey;
+      width: 500px;
+      margin: 0 auto;
+  }
+  
+  h{color:FireBrick;font-size:48px}
+  h1{color:FireBrick;font-size:42px}
+  p{color:DarkGoldenRod;font-size:22px}
+  
+  .button {
+    padding: 8px 18px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background: #4CAF50;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  }
+  .button:hover {background-color: #3e8e41}
+  
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  #more {display: none;}
+  
+  .center{
+      position:absolute;
+      width:780px;
+      height:650px;
+      left:50%;
+      top:56%;
+      bottom:50%;
+      margin-left:-390px;
+      margin-top:-135px;
+      text-shadow: 0 3px 15px rgba(0,0,0,.6);
+  }
+  img{
+    border-radius: 15px;
+     margin-left:6px;
+     margin-top:6px;
+     box-shadow: 0 3px 15px rgba(0,0,0,.4);
+     cursor: pointer;
+  }
+  
+  .bg-image {
+    filter: blur(8px);
+    -webkit-filter: blur(12px); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     border-radius:10px;
+  }
+  
+  .bg-text {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-weight: bold;
+    border-radius:25px;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 58%;
+    height:32%;
+    padding: 1px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  }

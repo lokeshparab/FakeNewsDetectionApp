@@ -1,0 +1,319 @@
+body {
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px;
+    background-image: url("https://www.pg-mc.com/wp-content/uploads/2014/07/slider1.jpg");
+    background-color: transparent;
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
+    overflow: none;
+    user-select: none;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  nav{
+    height: 50px;
+    background: #063247;
+    box-shadow: 0 3px 15px rgba(0,0,0,.4);
+      border-radius:22px;
+  }
+  nav ul{
+    float: right;
+    margin-right: 30px;
+  }
+  nav ul li{
+    display: inline-block;
+  }
+  nav ul li a{
+    color: white;
+    display: block;
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 22px;
+    background: #063247;
+    transition: .5s;
+  }
+  nav ul li a:hover,
+  nav ul li a.active{
+    color: #23dbdb;
+  }
+  nav ul ul{
+    position: absolute;
+    top: 85px;
+    border-top: 3px solid #23dbdb;
+    opacity: 0;
+    visibility: hidden;
+  }
+  nav ul li:hover > ul{
+    top: 55px;
+    opacity: 1;
+    visibility: visible;
+    transition: .3s linear;
+  }
+  nav ul ul li{
+    width: 150px;
+    display: list-item;
+    position: relative;
+    border: 1px solid #042331;
+    border-top: none;
+  }
+  nav ul ul li a{
+    line-height: 50px;
+  }
+  nav ul ul ul{
+    border-top: none;
+  }
+  nav ul ul ul li{
+    position: relative;
+    top: -55px;
+    left: 150px;
+  }
+  nav ul ul li a i{
+    margin-left: 45px;
+  }
+  img{
+    border-radius: 15px;
+     margin-left:6px;
+     margin-top:6px;
+     box-shadow: 0 3px 15px rgba(0,0,0,.4);
+     cursor: pointer;
+  }
+  
+  input[type=text], select, textarea {
+    height: 50px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid lightgrey;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit]{
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: #fc83bb;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover{
+    background-color: #45a049;
+    border: #fc83bb;
+  }
+  
+  .container {
+    border-radius: 20px;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    padding: 20px;
+    width:50%;
+    margin-left:350px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.8);
+    margin-top:28px;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  form .field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  form .field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    background-color:#FFFAF0;
+  }
+  form .field input:focus{
+    border-color: #fc83bb;
+  }
+  form .field input::placeholder{
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  form .field input:focus::placeholder{
+    color: #b3b3b3;
+  }
+  
+  form .field select{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    background-color:#FFFAF0;
+  }
+  form .field select:focus{
+    border-color: #fc83bb;
+  }
+  form .field select::placeholder{
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  form .field select:focus::placeholder{
+    color: #b3b3b3;
+  }
+  
+  form  textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    background-color:#FFFAF0;
+  }
+  form textarea:focus{
+    border-color: #fc83bb;
+  }
+  form textarea::placeholder{
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  form  textarea:focus::placeholder{
+    color: #b3b3b3;
+  }
+  
+  form .btn{
+    height: 50px;
+    width: 100%;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  form .btn .btn-layer{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    color:#fff;
+  background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
+  background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
+    border-radius: 5px;
+    transition: all 0.4s ease;;
+  }
+  form .btn:hover .btn-layer{
+    left: 0;
+  }
+  form .btn input[type="submit"]{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-phone {
+    background: #3B5998;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    width: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .fa-map-marker {
+    background: #55ACEE;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    width: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .fa-send-o {
+    background: #007bb5;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    width: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .fa-globe {
+    background: #125688;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    width: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  h1{font-size:35px;
+  color:firebrick;
+  box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  border-radius:50px;
+  text-shadow: 0 3px 15px rgba(0,0,0,.6);
+  width:94%;}
+  h3{
+    color:white;
+  }
+  p{
+    font-size:16px;
+    color:white;
+    text-shadow: 0 3px 15px rgba(0,0,0,.4);
+  }
