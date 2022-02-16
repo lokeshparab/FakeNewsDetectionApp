@@ -3,12 +3,41 @@
 #from crypt import methods
 #from email import message
 #from pyexpat.errors import messages
+#from crypt import methods
 from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mail import Mail, Message
 from app import *
 import random
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
+
+
+app.config['MAIL_SERVER'] = os.environ['MAIL_SERVER']
+app.config['MAIL_PORT'] = os.environ['MAIL_PORT']
+app.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
+app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
+app.config['MAIL_DEFAULT_SENDER'] = os.environ['MAIL_USERNAME']
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USE_TLS'] = False
+mail = Mail(app)
+
 app.secret_key = str(random.randint(111, 999)).encode()
+
+
+
+def send_email(name,email,subject):
+
+    msg = Message(
+                name+' query from '+ email,
+                sender = email,
+                recipients = ['vu1f1819026@pvppcoe.ac.in'],
+                body = subject
+               )
+    mail.send(msg)
 
 
 @app.route('/', methods=['GET'])
@@ -90,7 +119,7 @@ def view():
 def help():
     return render_template('help.html')
 
-@app.route('/contact')
+@app.route('/contact' , methods=["GET","POST"])
 def contact():
 
     if request.method == 'POST' and request.form.get('submit'):

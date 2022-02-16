@@ -37,12 +37,12 @@ def detect_text(news):
 
     #RFC = pickle.load(open('model_rfc.sav','rb')
 
-def send_email(name,email,subject):
+#def send_email(name,email,subject):
 
-    if email_validate(email):
-        # send email to company
-        pass
+ #   if email_validate(email):
+  #      # send email to company
+   #     pass
 
-    else:
+    #else:
         # display flash message for invalid email
-        pass   
+     #   pass   
