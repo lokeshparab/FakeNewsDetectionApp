@@ -9,6 +9,8 @@ DT = pickle.load(open('static/model/model_dt.sav','rb'))
 GBC = pickle.load(open('static/model/model_gbc.sav','rb'))
 LR = pickle.load(open('static/model/model_lr.sav','rb'))
 
+def email_validate(email):
+    pass
 
 def wordopt(text):
     text = text.lower()
@@ -34,3 +36,13 @@ def detect_text(news):
     return (pred_LR, pred_DT, pred_GBC)
 
     #RFC = pickle.load(open('model_rfc.sav','rb')
+
+def send_email(name,email,subject):
+
+    if email_validate(email):
+        # send email to company
+        pass
+
+    else:
+        # display flash message for invalid email
+        pass   
