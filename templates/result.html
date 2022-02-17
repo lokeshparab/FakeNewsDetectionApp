@@ -1,0 +1,24 @@
+{% extends "base2.html" %}
+{% block title %}Result{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/result.css') }}">{% endblock %}
+{% block content %}
+
+</head>
+<body>
+  <!--
+<nav>
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrIg_Ljv_3NeK0LElowk8huhdgxDvyv3iGsQ&usqp=CAU" height="38px" width="45px">
+</nav> -->
+<div class="container">
+<center><h1>Results</h1><br></center>
+ <script>
+     
+     /* type your data ans assign here with function*/
+ </script>
+    <b><a href="{{ url_for('detect') }}"><button class="button" name="submit"><i class="fa fa-history"></i>Back</button></b></a>
+    </center>
+   <!-- <b><a href="homepage.html"><button class="button" name="submit"><i class="fa fa-home"></i>Home</button></b></a>
+    </center> -->
+</div>
+
+{% endblock %}

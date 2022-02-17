@@ -109,7 +109,7 @@ def detect():
 
 @app.route('/detect/result')
 def result():
-    return ''
+    return render_template('result.html')
 
 @app.route('/view')
 def view():
