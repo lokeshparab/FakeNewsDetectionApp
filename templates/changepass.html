@@ -1,4 +1,4 @@
-{% extends "base2.html" %}
+{% extends "base1.html" %}
 {% block title %}Change Password{% endblock %}
 {% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/changepassword.css') }}">{% endblock %}
 {% block content %}
@@ -7,7 +7,7 @@
    <div class="form-inner">
      <form action="#" class="Changepass">
       <div class="field">
-       <input type="text" placeholder="Username" required>
+       <input type="text" placeholder="Email" required>
       </div>
       <div class="field">
        <input type="password" placeholder="New Password" required>

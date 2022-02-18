@@ -4,7 +4,6 @@
         <title>{% block title %}{% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         {% block style %} {% endblock %}
@@ -17,22 +16,6 @@
            <li><a href="{{ url_for('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
            <li><a href="{{ url_for('detect') }}"><i class="fa fa-search"></i> Detect</a></li>
             <li><a href="{{ url_for('view') }}"><i class="fa fa-database"></i> View</a></li>
-            <li>
-             <a href="#"><i class="fa fa-bar-chart"></i> Graph
-               <i class="fa fa-caret-down"></i>
-             </a>
-              <ul>
-                <li><a href="AwarnessGraph.html">Awarness</a></li>
-                <li>
-                 <a href="#">Fraud<i class="fa fa-caret-right"></i></a>
-                <ul>
-                 <li><a href="pos_graph.html">Positive</a></li>
-                 <li><a href="neu_graph.html">Neutral</a></li>
-                 <li><a href="neg_graph.html">Negative</a></li>
-                </ul>
-                </li>
-              </ul>
-             </li>
              <li><a href="{{ url_for('help') }}"><i class="fa fa-question-circle"></i> Help</a></li>
              <li><a href="{{ url_for('contact') }}"><i class="fa fa-phone-square"></i> Contact</a></li>
              <li>

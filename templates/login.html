@@ -20,60 +20,60 @@
           <div class="slider-tab"></div>
        </div>
        <div class="form-inner">
-           <form action="#" class="login">
+           <form action="#" class="login" method="post">
            <div class="center">
                <b><label>Sign in using your account</label></b>
            </div>
              <div class="field">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name='username' placeholder="Username" required>
              </div>
              <div class="field">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name='password' placeholder="Password" required>
              </div>
              <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
              <div class="field btn">
                 <div class="btn-layer"></div>
-                <input type="submit" value="Login">
+                <input type="submit" name="login" value="login">
              </div>
              
              <div class="register-link">
                 Don't have an account? <a href="">Register</a>
              </div>
              <center><div class="pass-link">
-                <a href="Changepass.html">Forgot password?</a>
+                <a href="{{ url_for('changepass') }}">Forgot password?</a>
              </div></center>
           </form>
-          <form action="#" class="register">
+          <form action="#" class="register" method="post">
              <div class="field">
-                <input type="text" placeholder="Full Name" required>
+                <input type="text" name="fname" placeholder="Full Name" required>
              </div>
             <div class="field">            
              <div class="radio-wrapper">
               <div class="radio-container">
-               <input checked="checked" type="radio" name="gender" value="1" id="male" />
+               <input checked="checked" type="radio" name="gender" value="0" id="male" />
                 <label for="male">Male</label>
-               <input type="radio" name="gender" value="0" id="female" />
+               <input type="radio" name="gender" value="1" id="female" />
                 <label for="female">Female</label>
-               <input type="radio" name="gender" value="1" id="others" />
+               <input type="radio" name="gender" value="2" id="others" />
                 <label for="others">Others</label>
              </div> 
             </div>
            </div>
              <div class="field">
-                <input type="number" placeholder="Age" required>
+                <input type="number" name="age" placeholder="Age" required>
              </div>
              <div class="field">
-                <input type="text" placeholder="Email Address" required>
+                <input type="text" name="email" placeholder="Email Address" required>
              </div>
              <div class="field">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name="user" placeholder="Username" required>
              </div>
              <div class="field">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name="pwd" placeholder="Password" required>
              </div>
              <div class="field btn">
                 <div class="btn-layer"></div>
-                <input type="submit" value="Register">
+                <input type="submit" name="register" value="register">
              </div>
              <div class="register-link">
                 Already have an account? <a href="">Login</a>

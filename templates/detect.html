@@ -11,7 +11,7 @@
         <p>{{ r2 }}</p>
         <p>{{ r3 }}</p>
            <div class="field btn">
-         <button type="submit" value="submit" class="button">Verify</button>   
+         <button type="submit" name="submitnews" value="submit" class="button">Verify</button>   
           </div>
       </form>
       
@@ -39,7 +39,7 @@
         <p>{{ r5 }}</p>
         <p>{{ r6 }}</p>
         <div class="field btn">
-         <button type="submit" class="button">Verify</button>
+         <button type="submit" name="submitmsg" value="submit2" class="button">Verify</button>
         </div>
       </form>
     </div>
@@ -69,6 +69,6 @@
   signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
   });
-  
+   
 </script>
 {% endblock %}

@@ -17,12 +17,12 @@
         <p><i class="fa fa-globe"></i><b>  www.fakeus.com</b></p><br><br>
       </div>
       <div class="column">
-        <form action="/action_page.php">
+        <form action="#" method="post">
          <div class="field">
-          <input type="text" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Name" required>
          </div>
          <div class="field">
-          <input type="text" placeholder="Email" required>
+          <input type="text" name='email' placeholder="Email" required>
          </div>
          <div class="field">
           <select id="country" name="country">
@@ -41,7 +41,7 @@
           <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
           <div class="field btn">
             <div class="btn-layer"></div>
-              <input type="submit" value="Send Message">
+              <input type="submit" name="submit" value="Send Message">
             </div>
           </div>
         </form>
