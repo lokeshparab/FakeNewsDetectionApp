@@ -24,11 +24,18 @@
               </a>
               <ul>
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                <li><a href="{{ url_for('home') }}">Logout</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
               </ul>
              </li>
         </ul>
         </nav>
+
+        {% if message %}
+        <div id='alert-message'>
+          <p>{{ message }}</p>
+        <!--	<i class="fas fa-times" onclick='document.getElementById("alert-message").style.display = "none"'></i> -->
+        </div>
+        {% endif %}
 
         <!-- Some code here -->
         {% block content %}

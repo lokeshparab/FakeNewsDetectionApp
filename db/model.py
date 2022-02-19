@@ -1,12 +1,7 @@
 #from enum import unique
 #from datetime import date
 #from enum import unique
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.sqlite"
-db = SQLAlchemy(app)
+from app import db
 
 class Records(db.Model) : 
     __tablename__ = 'Records'
@@ -16,23 +11,23 @@ class Records(db.Model) :
     id          = db.Column(db.Integer, primary_key= True)
 
     data        = db.Column(db.String(700), nullable= False)
-    date        = db.Column(db.Datetime, nullable= False)
+    date        = db.Column(db.DateTime, nullable= False)
 
-    account_id  = db.Column(db.Integer,db.Foreignkey('Account.id'), nullable=False)
-    datatype_id = db.Column(db.Integer,db.Foreignkey('Datatype.id'), nullable=False)
-    app_id      = db.Column(db.Integer,db.Foreignkey('app.id'), nullable=True)
-    detect_id   = db.Column(db.Integer,db.Foreignkey('detect.id'), nullable=False)
+    account_id  = db.Column(db.Integer,db.ForeignKey('Account.id'), nullable=False)
+    datatype_id = db.Column(db.Integer,db.ForeignKey('Datatype.id'), nullable=False)
+    app_id      = db.Column(db.Integer,db.ForeignKey('App.id'), nullable=True)
+    detect_id   = db.Column(db.Integer,db.ForeignKey('Detect.id'), nullable=False)
 
     
 class Account(db.Model):
     __tablename__ = 'Account'
 
     #Creation of attributes in Account_info
-    account_id = db.Column(db.Integer, primary_key= True )
+    id = db.Column(db.Integer, primary_key= True )
 
     fname       = db.Column(db.String(128), nullable=False )
     gender     = db.Column(db.String(7), nullable=False )
-    ages       = db.Column(db.Integer, nullable=False )
+    age       = db.Column(db.Integer, nullable=False )
     email      = db.Column(db.String(40), nullable=False, unique=True)
     username   = db.Column(db.String(40), nullable=False, unique=True)
     password   = db.Column(db.String(128), nullable=False)
@@ -43,7 +38,7 @@ class Account(db.Model):
 class Detect(db.Model):
     __tablename__ = 'Detect'
 
-    detect_id = db.Column(db.Integer, primary_key= True)
+    id = db.Column(db.Integer, primary_key= True)
 
     result   = db.Column(db.String(4), nullable=False, unique=True)
 
@@ -67,4 +62,6 @@ class App(db.Model):
     app     = db.Column(db.String(10), nullable=False, unique=True)
    
     account_app = db.relationship('Records',backref='app',lazy=True)
-  
+
+db.create_all()
+db.session.commit()

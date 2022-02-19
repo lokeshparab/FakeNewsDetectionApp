@@ -1,41 +1,38 @@
-import pickle
-import pandas as pd
-import re
-import string
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mail import Mail
+from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
+import random
+import os
 
-vectorization = pickle.load(open('static/model/vector_model.sav','rb'))
-linear_clf = pickle.load(open('static/model/model_lc.sav','rb'))
-DT = pickle.load(open('static/model/model_dt.sav','rb'))
-GBC = pickle.load(open('static/model/model_gbc.sav','rb'))
-LR = pickle.load(open('static/model/model_lr.sav','rb'))
+load_dotenv()
 
-def email_validate(email):
-    pass
+app = Flask(__name__, template_folder = '../templates')
 
-def wordopt(text):
-    text = text.lower()
-    text = re.sub('\[.*?\]', '', text)
-    text = re.sub("\\W"," ",text) 
-    text = re.sub('https?://\S+|www\.\S+', '', text)
-    text = re.sub('<.*?>+', '', text)
-    text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
-    text = re.sub('\n', '', text)
-    text = re.sub('\w*\d\w*', '', text)    
-    return text
+app.static_folder = '../static'
+app.secret_key = str(random.randint(111, 999)).encode()
 
-def detect_text(news):
-    testing_news = {"text":[news]}
-    new_def_test = pd.DataFrame(testing_news)
-    new_def_test["text"] = new_def_test["text"].apply(wordopt) 
-    new_x_test = new_def_test["text"]
-    new_xv_test = vectorization.transform(new_x_test)
-    pred_LR = LR.predict(new_xv_test)
-    pred_DT = DT.predict(new_xv_test)
-    pred_GBC = GBC.predict(new_xv_test)
-    #pred_RFC = RFC.predict(new_xv_test)
-    return (pred_LR, pred_DT, pred_GBC)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///../db/data.sqlite"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+db = SQLAlchemy(app)
 
-    #RFC = pickle.load(open('model_rfc.sav','rb')
+app.config['MAIL_SERVER'] = os.environ['MAIL_SERVER']
+app.config['MAIL_PORT'] = os.environ['MAIL_PORT']
+app.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
+app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
+app.config['MAIL_DEFAULT_SENDER'] = os.environ['MAIL_USERNAME']
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USE_TLS'] = False
+mail = Mail(app)
+
+def session_check(page): return 'user' in session
+
+
+
+#def email_validate(email):
+ #   pass
+
+
 
 #def send_email(name,email,subject):
 
