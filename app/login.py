@@ -35,7 +35,7 @@ def login_detail(user,pwd):
         message = "You have entered wrong password"
 
     else:
-        session['user'] = user
+        session['user'] = user_detail.id
         message = 'Logged in succesfully'
 
     return message

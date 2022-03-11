@@ -37,8 +37,8 @@ def logout():
     return redirect(url_for('home', message=message))
 
 @app.route('/detect/result')
-def result():
-    return render_template('result.html')
+def result(app,data,newlink,date,result):
+    return render_template('result.html',app,data,newlink,date,result)
 
 
 

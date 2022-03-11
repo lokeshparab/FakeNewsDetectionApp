@@ -15,9 +15,49 @@
      
      /* type your data ans assign here with function*/
  </script>
+    <table>
+      {% if app %}
+      <tr>
+          <td>App</td>
+          <td>{{ app }}</td>
+      </tr>
+      <tr>
+        <td>Message</td>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td>{{ app }}</td>
+      </tr>
+
+      {% else %}
+
+      {% if newslink %} 
+      <tr>
+        <td>Newslink</td>
+        <td>{{ newslink }}</td>
+      </tr>
+      {% endif %} 
+
+      <tr>
+        <td>News</td>
+        <td>{{ data }}</td>
+      </tr>
+      {% endif %}
+
+      <tr>
+        <td>Result</td>
+        <td>{{ data }}</td>
+      </tr>
+
+      
+
+    </table>
+
+
     <b><a href="{{ url_for('detect') }}"><button class="button" name="submit"><i class="fa fa-history"></i>Back</button></b></a>
-    </center>
-   <!-- <b><a href="homepage.html"><button class="button" name="submit"><i class="fa fa-home"></i>Home</button></b></a>
+    <!-- </center>
+    <b><a href="homepage.html"><button class="button" name="submit"><i class="fa fa-home"></i>Home</button></b></a>
     </center> -->
 </div>
 
