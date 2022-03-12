@@ -36,12 +36,6 @@ def logout():
     message = 'Logged out succesfully'
     return redirect(url_for('home', message=message))
 
-@app.route('/detect/result')
-def result(app,data,newlink,date,result):
-    return render_template('result.html',app,data,newlink,date,result)
-
-
-
 @app.route('/help')
 def help():
     if 'user' in session:
