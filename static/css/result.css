@@ -114,8 +114,8 @@
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4); 
     padding: 13px;
-    width:50%;
-    margin-left:350px;
+    width:80%;
+    margin:auto;
     box-shadow: 0 3px 15px rgba(0,0,0,.8);
     margin-top:28px;
   }
@@ -130,6 +130,7 @@
     border: none;
     border-radius: 30px;
     box-shadow: 0 3px 15px rgba(0,0,0,.8);
+    margin-top: 15px;
   }
   .button:hover {background-color: #3e8e41}
   
@@ -142,3 +143,27 @@
       align-self: center;    
   }
   
+  table {
+    background-color: #9933cc;
+    margin: auto;
+    table-layout: fixed;
+    width: fit-content;
+    max-width: 97%;
+  }
+  tr:nth-child(odd) {
+    background: rgb(163, 23, 105);
+  }
+  tr:nth-child(even) {
+    background: white;
+  }
+  td {
+    padding: 10px;
+    color:red;
+    overflow-wrap: break-word;
+  }
+  .heading {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 150px !important;
+  }
