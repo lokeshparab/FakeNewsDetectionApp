@@ -1,13 +1,13 @@
 from email import message
 from unittest import result
 
-from numpy import record
+#from numpy import record
 from app import app, db, session
 from db.model import Datatype, Detect, Records, App
 from flask import render_template, request , redirect, url_for
 
 import pickle
-import pandas as pd
+#import pandas as pd
 import re
 import string
 import datetime
