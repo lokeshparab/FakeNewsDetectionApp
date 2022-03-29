@@ -32,8 +32,8 @@
       margin: 0 auto;
   }
   
-  h{color:FireBrick;font-size:48px}
-  h1{color:FireBrick;font-size:42px}
+  h{color:rgb(91, 206, 238);font-size:48px}
+  h1{color:rgb(91, 206, 238);font-size:42px}
   p{color:DarkGoldenRod;font-size:22px}
   
   .button {

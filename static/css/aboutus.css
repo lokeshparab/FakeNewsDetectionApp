@@ -201,7 +201,7 @@ body {
   }
   h1{
     font-size:35px;
-    color:firebrick;
+    color:rgb(91, 206, 238);;
   box-shadow: 0 3px 15px rgba(0,0,0,.8);
   text-shadow: 0 3px 15px rgba(0,0,0,.6);
   border-radius:50px;
@@ -210,7 +210,7 @@ body {
   }
   h2{
       font-size:35px;
-      color:firebrick;
+      color:rgb(91, 206, 238);;
   box-shadow: 0 3px 15px rgba(0,0,0,.8);
   text-shadow: 0 3px 15px rgba(0,0,0,.6);
   border-radius:50px;
