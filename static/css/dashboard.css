@@ -1,5 +1,26 @@
 body {
-    overflow: hidden;
+    overflow: scroll;
+  }
+  .container {
+    border-radius: 20px;
+    /* background-color: rgb(49, 186, 201); */
+    background-color:#ffffff;
+    background-color:rgba(255, 255, 255, 0.721); 
+    padding: 25px;
+    width:90%;
+    margin:auto;
+    margin-top: 50px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.8);
+  }
+  .leftbox{
+    float:left;
+    /* width:25%; */
+    /* height:180px; */
+  }
+  .rightbox{
+    float:right;
+    /* width:25%; */
+    /* height:180px; */
   }
   img{
     border-radius: 15px;

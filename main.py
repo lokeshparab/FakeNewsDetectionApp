@@ -11,6 +11,7 @@ from app.detect import *
 from app.contact import *
 from app.login import *
 from app.view_profile import *
+from app.dashboard import *
 
 
 
@@ -22,12 +23,6 @@ def home():
 @app.route('/aboutus', methods=['GET'])
 def aboutus():
     return render_template('aboutus.html')
-
-@app.route('/dashboard', methods=['GET','POST'])
-def dashboard():
-    if 'user' in session:
-        return render_template('dashboard.html')
-    else: return redirect( url_for('login'))
     
 
 @app.route('/logout', methods=['GET','POST'])

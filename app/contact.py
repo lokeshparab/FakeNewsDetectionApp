@@ -1,5 +1,5 @@
-from app import app, mail
-from flask import render_template, request
+from app import app, mail, session
+from flask import render_template, request , redirect, url_for
 from flask_mail import Message
 
 def send_email(name,email,subject):
@@ -21,5 +21,9 @@ def contact():
         subject = request.form['subject']
 
         send_email(name,email,subject)
+
+    else:
+        if 'user' not in session:
+            return redirect( url_for('login') )
 
     return render_template('contact.html')
