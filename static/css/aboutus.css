@@ -152,12 +152,12 @@ body {
       size:100%;
   }
   #profile-container1 {
-      width: 249px;
-      height: 180px;
+    width: 240px;
+    height: 240px;
   }
   #profile-container1 img {
-      width: 249px;
-      height: 180px;
+    width: 249px;
+    height: 249px;
       position: absolute;
       object-fit: cover;
       border-radius: 11%;
@@ -171,12 +171,12 @@ body {
       size:100%;
   }
   #profile-container2 {
-      width: 249px;
-      height: 180px;
+    width: 240px;
+    height: 240px;
   }
   #profile-container2 img {
-      width: 249px;
-      height: 180px;
+    width: 249px;
+    height: 249px;
       position: absolute;
       object-fit: cover;
       border-radius: 11%;
