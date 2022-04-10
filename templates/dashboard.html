@@ -1,24 +1,36 @@
 {% extends "base2.html" %}
 {% block title %}Dashboard{% endblock %}
-{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/dashboard.css') }}">{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/dashboard.css') }}">
+{% endblock %}
 {% block content %}
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="container">
+    <h1>Fake News statistic</h1>
     <div class="chart1">
-        <canvas id="chart" width="900" height="900"></canvas>
+        <canvas id="chart" width="900" height="400"></canvas>
     </div>
-    <div class="'chart2"> 
-        <div  class="leftbox">
-            <canvas id="ctx" width="300" height="300"></canvas>
-        </div>
-        <div class="rightbox">
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-        </div>
+    <hr>
+
+    <div class="my-menu">
+        <form action="#" method="post">
+        <label for="news" >News company: </label>
+        <select name="newschannel" id="news">
+            {% if channels %} 
+                {% for i in channels %}
+                    <option value={{i}}>{{i}}</option>
+                {% endfor %} 
+            {% endif %}
+        </select>
+        <input type="submit" name = 'submit' value="Submit">
+    </form>
+    </div>
+
+    <div class="'chart2">
+        {% if dataset %}
+        <canvas id="ctx" width="300" height="300"></canvas> 
+        {% endif %}
     </div>
 
 </div>
@@ -31,10 +43,11 @@
             labels: {{ labels | safe }},
             datasets: [
                 {
-                    label: "Data points",
+                    label: "Fake News",
                     data: {{ values | safe }},
                     fill: false,
-                    borderColor: "rgb(75, 192, 192)",
+                    borderColor: "rgb(255, 92, 92)",
+                    backgroundColor: "rgb(23, 120, 221)",
                     lineTension: 0.1
                 }
             ]
@@ -51,25 +64,17 @@
     // setup block
 
     const data = {
-        labels: [ 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: [ 'Real', 'Fake'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Fakeness',
+            data: {{ dataset | safe }},
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
         }]
