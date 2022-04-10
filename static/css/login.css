@@ -16,7 +16,7 @@
   .wrapper .title-text{
     display: flex;
     width: 250%;
-    color:firebrick;
+    color:rgb(91, 206, 238);;
     text-shadow: 0 3px 15px rgba(0,0,0,.6);
     box-shadow: 0 3px 15px rgba(0,0,0,.8);
     margin-left:-40px;
@@ -352,14 +352,14 @@
   }
   
   .form1-container .cancel {
-    background-color: red;
+    background-color: rgb(91, 206, 238);;
   }
   
   .form1-container .btn:hover{
     opacity: 5;
   }
   h1{font-size:35px;
-  color:firebrick;
+  color:rgb(91, 206, 238);;
   text-shadow: 0 3px 15px rgba(0,0,0,0.6);
   box-shadow: 0 3px 15px rgba(0,0,0,.8);
   border-radius:50px;}
