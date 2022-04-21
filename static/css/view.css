@@ -42,9 +42,10 @@ body {
     /* width:100%; */
     /* table-layout: fixed; */
     margin: auto;
-    table-layout: fixed;
+    table-layout: auto
     width: 100%;
     max-width: 97%;
+    min-height: 300px;
   }
   .tbl-header{
     background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
@@ -52,6 +53,9 @@ body {
     border-radius:50px;
    }
   
+  tr{
+    min-height: 3cm;
+  }
   th{
     padding: 20px 15px;
     text-align: center;
@@ -68,6 +72,7 @@ body {
     font-size: 17px;
     color: #fff;
     border-bottom: solid 1px rgba(255,255,255,0.1);
+    max-height: 4cm;
   }
   
   h1{font-size:35px;
