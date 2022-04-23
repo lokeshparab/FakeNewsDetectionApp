@@ -1,5 +1,103 @@
 {% extends "base2.html" %}
 {% block title %}Dashboard{% endblock %}
-{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/dashboard.css') }}">{% endblock %}
+{% block style %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='css/dashboard.css') }}">
+{% endblock %}
 {% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container">
+    <h1>Fake News statistic</h1>
+    <div class="chart1">
+        <canvas id="chart" width="900" height="400"></canvas>
+    </div>
+    <hr>
+
+    <div class="my-menu">
+        <form action="#" method="post">
+            <div class="newschannel">
+                <label for="news" >News company: </label>
+                <select name="newschannel" id="news">
+                {% if channels %} 
+                    {% for i in channels %}
+                        <option value={{i}}>{{i}}</option>
+                    {% endfor %} 
+                {% endif %}
+                </select>
+                <input type="submit" name = 'submit' value="Submit">
+            </div>
+        
+    </form>
+    </div>
+
+    <div class="'chart2">
+        {% if dataset %}
+        <canvas id="ctx" width="300" height="300"></canvas> 
+        {% endif %}
+    </div>
+
+</div>
+
+<script>
+    var ctt = document.getElementById('chart').getContext('2d');
+    var lineChart = new Chart(ctt, {
+        type: "bar",
+        data: {
+            labels: {{ labels | safe }},
+            datasets: [
+                {
+                    label: "Fake News",
+                    data: {{ values | safe }},
+                    fill: false,
+                    borderColor: "rgb(255, 92, 92)",
+                    backgroundColor: "rgb(23, 120, 221)",
+                    lineTension: 0.1
+                }
+            ]
+        },
+        options: {
+            responsive: false
+        }
+    });
+</script>
+
+
+<script>
+
+    // setup block
+
+    const data = {
+        labels: [ 'Real', 'Fake'],
+        datasets: [{
+            label: 'Fakeness',
+            data: {{ dataset | safe }},
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1
+        }]
+    };
+    // config block
+
+    const config = {
+        type: 'pie',
+        data,
+        options: {
+            responsive: false
+        }
+    };
+
+    // render block
+
+    const ctx = new Chart(
+        document.getElementById('ctx').getContext('2d'),
+        config
+    );
+
+</script>
 {% endblock %}
