@@ -24,8 +24,10 @@ LR = pickle.load(open('static/model/model_lr.sav','rb'))
 #RFC = pickle.load(open('model_rfc.sav','rb'))
 
 def urllink(url):
-    r = requests.get(url)  
-    htmldata = r.text
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'}
+    htmldata = requests.get(url, headers=headers).text
+    #r = requests.get(url)  
+    #htmldata = r.text
     soup = BeautifulSoup(htmldata, 'html.parser')
     data = ''
     for data1 in soup.find_all("p"):
