@@ -43,5 +43,5 @@ def dashboard():
                 real = data[1] / ( data[1] + data[2] ) * 100
                 fake = data[2] / ( data[1] + data[2] ) * 100
                 dataset = [real,fake]
-            return render_template('dashboard.html', labels = labels, values=values, channels=channels , dataset= dataset)
+            return render_template('dashboard.html', labels = labels, values=values, channels=channels , dataset= dataset, channel=channel)
         else: return redirect( url_for('login'))
