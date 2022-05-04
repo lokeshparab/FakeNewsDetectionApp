@@ -63,7 +63,7 @@
   table {
     background-color: #9933cc;
     margin: auto;
-    table-layout: fixed;
+    table-layout: auto;
     width: fit-content;
     max-width: 97%;
   }

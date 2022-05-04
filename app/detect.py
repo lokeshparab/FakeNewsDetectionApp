@@ -21,7 +21,8 @@ linear_clf = pickle.load(open('static/model/model_lc.sav','rb'))
 DT = pickle.load(open('static/model/model_dt.sav','rb'))
 GBC = pickle.load(open('static/model/model_gbc.sav','rb'))
 LR = pickle.load(open('static/model/model_lr.sav','rb'))
-#RFC = pickle.load(open('model_rfc.sav','rb'))
+RFC = pickle.load(open('static/model/model_rfc.sav','rb'))
+LSTM = pickle.load(open('static/model/model_lstm.sav','rb'))
 
 def urllink(url):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'}
@@ -61,11 +62,11 @@ def detect_text(news):
     pred_LR = LR.predict(new_xv_test)
     pred_DT = DT.predict(new_xv_test)
     pred_GBC = GBC.predict(new_xv_test)
-    #pred_RFC = RFC.predict(new_xv_test)
-    if [pred_DT[0],pred_GBC[0],pred_LR[0]].count(0)>2:
+    pred_RFC = RFC.predict(new_xv_test)
+    pred_LSTM = LSTM.predict(new_xv_test)
+    if [pred_DT[0],pred_GBC[0],pred_LR[0],pred_RFC[0],pred_LSTM[0]].count(0)>2:
         return 1
     else: return 2
-    print(pred_LR, pred_DT, pred_GBC)
 
     
 

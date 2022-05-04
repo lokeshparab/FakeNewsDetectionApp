@@ -5,7 +5,6 @@ import os
 
 @app.route('/dashboard', methods=['GET','POST'])
 def dashboard():
-    print(os.listdir())
     df = pd.read_csv("static/analysis/AnalysisofNews.csv")
     channels = list(df['newschannel'].values)
             

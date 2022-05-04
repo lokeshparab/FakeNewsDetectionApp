@@ -10,6 +10,12 @@
         {% block style %} {% endblock %}
      </head>
      <body>
+      {% if message %}
+			<div id='alert-message'>
+				<p>{{ message }}</p>
+				<i class="fas fa-times" onclick='document.getElementById("alert-message").style.display = "none"'></i>
+			</div>
+		 {% endif %}
         <nav>
          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrIg_Ljv_3NeK0LElowk8huhdgxDvyv3iGsQ&usqp=CAU" height="38px" width="45px">
          <ul>
