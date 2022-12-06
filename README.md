@@ -10,6 +10,9 @@
 6. The accuracy of the model is around 95% for self-made models and 97% for pre-trained models. 
 7. This model can detect all news and messages that are related to COVID-19, politics, geology, etc.
 
+## Diagram
+![Capture](Capture.PNG)
+
 ## Requirement
 * run this script to install all libraries
 ```
