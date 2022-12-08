@@ -11,7 +11,7 @@
 7. This model can detect all news and messages that are related to COVID-19, politics, geology, etc.
 
 ## Diagram
-![Capture](Capture.PNG)
+![Capture](diagram.jpg)
 
 ## Requirement
 * run this script to install all libraries
