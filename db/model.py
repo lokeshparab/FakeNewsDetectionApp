@@ -2,6 +2,7 @@
 #from datetime import date
 #from enum import unique
 from app import db
+from app import app
 
 class Records(db.Model) : 
     __tablename__ = 'Records'
@@ -63,5 +64,6 @@ class App(db.Model):
    
     account_app = db.relationship('Records',backref='app',lazy=True)
 
-db.create_all()
-db.session.commit()
+with app.app_context():
+    db.create_all()
+    db.session.commit()
